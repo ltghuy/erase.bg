@@ -1,0 +1,61 @@
+.slider {
+    cursor: pointer;
+    max-width: 950px;
+    height: 433px;
+    margin: 40px auto;
+    user-select: none;
+    position: relative;
+    border-radius: 20px;
+    box-sizing: content-box;
+    overflow: hidden;
+    .before {
+        height: 100%;
+        width: 50%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        img {
+            height: 100%;
+            max-width: none;
+        }
+    }
+    &__after {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3LjkzNyA3LjkzOCIgaGVpZ2h0PSIzMCIgd2lkdGg9IjMwIj48cGF0aCBwYWludC1vcmRlcj0ic3Ryb2tlIGZpbGwgbWFya2VycyIgZD0iTS4wMTQuMDE0SDMuOTdWMy45N0guMDE0ek0zLjk3IDMuOTY4aDMuOTU0djMuOTU1SDMuOTd6IiBmaWxsPSIjZWVlZmYwIi8+PC9zdmc+);
+        max-width: none;
+    }
+    .line {
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background-color: var(--white);
+        top: 0;
+        left: 50%;
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 40px;
+            width: 40px;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 100%;
+            cursor: ew-resize;
+            background: rgba(255, 255, 255, 0.7);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            i {
+                font-size: 23px;
+                padding: 2px;
+                background: var(--brand-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+}

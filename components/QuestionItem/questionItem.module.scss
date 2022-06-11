@@ -1,0 +1,34 @@
+.item {
+    width: 100%;
+    color: var(--white-80);
+    background-color: var(--black-70);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 140%;
+    background-color: #303233;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 24px;
+    }
+    &__arrow {
+        transition: transform 0.25s;
+        &:global(.rotate) {
+            transform: rotate(180deg);
+        }
+    }
+    &__dropdown {
+        width: 100%;
+        padding: 24px;
+        text-align: left;
+        background-color: var(--black-70);
+        display: none;
+        transition: opacity 0.3s ease-in-out;
+        &:global(.show) {
+            display: block;
+        }
+    }
+}

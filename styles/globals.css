@@ -1,0 +1,59 @@
+:root {
+  --white: #fff;
+  --white-80: rgba(255,255,255,0.8);
+  --white-25: rgba(255,255,255,0.25);
+  --white-04: rgba(255,255,255,0.04);
+  --primary: #d92a7e;
+  --black-70: #1a1b1b;
+  --bg-color: #101112;
+  --bg-color-80: rgba(16,17,18,0.8);
+  --secondary-bg-color: rgba(255,255,255,0.02);
+  --brand-gradient: linear-gradient(120.55deg,#FF4040 18.56%,#A20BD8 98.01%);
+  --brand-gradient-reverse: linear-gradient(120.55deg,#A20BD8 18.56%,#FF4040 98.01%);
+  --gradient-green: linear-gradient(107.65deg,#17C969 17.53%,#005DBB 94.64%);
+  --gradient-yellow: linear-gradient(132.2deg,#F9D423 7.64%,#FF4E50 97.11%);
+  --gradient-purple: linear-gradient(90.36deg,#AD00FF 0.31%,#330371 104.9%);
+}
+
+html,
+body {
+  font-family: Inter, sans-serif;
+  color: var(--white);
+  background-color: var(--bg-color);
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: rgb(109, 109, 109);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url('/fonts/Inter.woff2') format('woff2');
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+}

@@ -1,0 +1,30 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 64px;
+
+    &__content {
+        max-width: 498px;
+        flex-shrink: 0;
+    }
+    &__image {
+        flex: 1;
+        max-width: 380px;
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 700;
+        padding-bottom: 24px;
+    }
+    &__para {
+        color: var(--white-80);
+        letter-spacing: 0.5px;
+        font-size: 18px;
+        line-height: 28px;       
+    }
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+}

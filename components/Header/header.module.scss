@@ -1,0 +1,50 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    height: 64px;
+    width: 100%;
+    max-width: 1920px;
+    border-bottom: 1px solid rgb(50, 50, 50);
+    background-color: var(--bg-color-80);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+    &__logo {
+        width: 135px;
+    }
+    &__control {
+        display: flex;
+        align-items: center;
+        .icon {
+            border: 1px solid #49494f;
+            border-radius: 8px;
+            display: inline-block;
+            width: 167px;
+            height: 52px;
+            margin-left: 20px;
+        }
+        img {
+            border-radius: inherit;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__link {
+        margin: 0 30px;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    &__btn {
+        margin-left: 20px;
+    }
+}
+.hiring {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+}

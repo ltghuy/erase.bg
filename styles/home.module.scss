@@ -1,0 +1,173 @@
+.home {
+    .intro {
+        width: 100%;
+        height: 336px;
+        background-color: var(--secondary-bg-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 56px;
+        }
+        p {
+            color: var(--white-80);
+            font-size: 18px;
+            line-height: 28px;
+            margin-top: 30px;
+        }
+        &__apps {
+            margin-top: 30px;
+            .icon {
+                width: 195px;
+                height: 60px;
+                display: inline-block;
+                margin: 0 10px;
+                border-radius: 8px;
+                border: 1px solid #49494f;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: inherit;
+                }
+            }
+        }
+    }
+    .experience {
+        width: 100%;
+        padding-bottom: 75px;
+        border-bottom: 1px solid rgb(50, 50, 50);
+        .container {
+            max-width: 1160px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .title {
+            font-size: 36px;
+            line-height: 38px;
+            font-weight: 700;
+            padding-top: 75px;
+        }
+        .para {
+            color: var(--white-80);
+            font-size: 18px;
+            line-height: 28px;
+            margin-top: 15px;
+        }
+    }
+    .features {
+       .title {
+           text-align: center;
+           font-size: 34px;
+           font-weight: 700;
+           line-height: 49px;
+           padding-top: 75px;
+       }
+       .para {
+           color: var(--white-80);
+           font-size: 18px;
+           line-height: 28px;
+           text-align: center;
+           padding-top: 20px;
+           margin: 0 auto;
+           max-width: 795px;
+           padding-bottom: 75px;
+       }
+    }
+    .grid {
+        background-color: var(--secondary-bg-color);
+        width: 100%;
+        padding-top: 32px;
+        padding-bottom: 62px;
+        &__title {
+            text-align: center;
+            h3 {
+                font-size: 34px;
+                line-height: 49px;
+                font-weight: 700;
+            }
+            p {
+                color: var(--white-80);
+                font-size: 18px;
+                line-height: 28px;
+                padding-bottom: 55px;
+            }
+        }
+        &__layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 23px;
+        }
+        &__button {
+            display: flex;
+            justify-content: center;
+            padding-top: 38px;
+        }
+    }
+    .questions {
+        border-bottom: 1px solid rgb(50, 50, 50);
+        &__title {
+            color: var(--white-80);
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 56px;
+            span {
+                background: var(--brand-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        &__para {
+            color: var(--white-80);
+            text-align: center;
+            line-height: 28px;
+            width: 700px;
+            margin: 24px auto 48px;
+            a {
+                font-weight: 700;
+                color: var(--white);
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 2px;
+                    width: 100%;
+                    left: 0;
+                    bottom: -3px;
+                    background: var(--brand-gradient);
+                }
+            }
+        }
+        &__list {
+            padding-bottom: 92px;
+        }
+    }
+    :global(#mobile_screen) {
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        display: none;
+        @media screen and (max-width: 1023px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+    }
+}

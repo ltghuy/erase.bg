@@ -1,0 +1,49 @@
+.footer {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--white-80);
+    h5 {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 700;
+        color: var(--white);
+    }
+    &__logo {
+        width: 135px;
+        margin-top: 56px;
+    }
+    &__para {
+        margin-top: 48px;
+        font-size: 14px;
+        line-height: 29px;
+        letter-spacing: 0.42px;
+    }
+    &__links {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 60px 0px;
+    }
+    &__link {
+        padding: 0 40px;
+        line-height: 22px;
+    }
+    &__social {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding-top: 30px;
+        img {
+            width: 25px;
+        }
+        li {
+            margin: 0 15px;
+        }
+    }
+    &__copyright {
+        font-size: 14px;
+        padding-top: 30px;
+        padding-bottom: 25px;
+    }
+}
