@@ -39,8 +39,29 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
   }
 
   const downLoad = () => {
-    const image = document.getElementById("preview_img") as HTMLImageElement
-    
+    const image = document.getElementById("preview_img") as any
+
+    const toDataURL = (image: any) => {
+        const canvas = document.createElement('canvas') as any
+        const ctx = canvas.getContext('2d')
+        canvas.width = image.naturalWidth
+        canvas.height = image.naturalHeight
+
+        if (bgColor) {
+          ctx.fillStyle = bgColor
+          ctx.fillRect(0, 0, canvas.width, canvas.height)
+        }
+        ctx.drawImage(image, 0, 0)
+        const dataURL = canvas.toDataURL()
+
+        //DOWNLOAD
+        const link = document.createElement('a');
+        link.download = 'change_bg.png';
+        link.href = dataURL
+        link.click()
+    }
+    if (image.complete) toDataURL(image)
+    else image.onload = toDataURL
   }
 
   return (
@@ -61,7 +82,6 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
               style={{backgroundColor: bgColor, backgroundImage: bgColor && 'none'}}
               className={`${transformedMode && styles.transform}`}
               id='preview_img' />
-              <canvas id='canvas' style={{display: 'none'}}></canvas>
           </div>
           <div className={styles.download}>
             <Button handClick={downLoad} downLoad>
