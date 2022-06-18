@@ -1,0 +1,169 @@
+.edit {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  .wrapper {
+    width: 1200px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--black-70);
+  }
+  .image {
+    flex: 1;
+    height: 100%;
+    backdrop-filter: brightness(0.75);
+    padding: 20px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    .tabs {
+      width: 100%;
+      height: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-shrink: 0;
+      .tab {
+        cursor: pointer;
+        font-size: 14px;
+        color: var(--white-80);
+        margin-right: 30px;
+        &.active {
+          font-weight: 700;
+          color: var(--white);
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+          }
+        }
+      }
+    }
+    .preview {
+      width: 100%;
+      height: 425px;
+      background-color: var(--black-70);
+      display: flex;
+      justify-content: center;
+      flex-shrink: 0;
+      img {
+        height: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        &.transform {
+          background-color: rgb(255, 255, 255);
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3LjkzNyA3LjkzOCIgaGVpZ2h0PSIzMCIgd2lkdGg9IjMwIj48cGF0aCBwYWludC1vcmRlcj0ic3Ryb2tlIGZpbGwgbWFya2VycyIgZD0iTS4wMTQuMDE0SDMuOTdWMy45N0guMDE0ek0zLjk3IDMuOTY4aDMuOTU0djMuOTU1SDMuOTd6IiBmaWxsPSIjZWVlZmYwIi8+PC9zdmc+);
+        }
+      }
+    }
+    .download {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .backgrounds {
+    --height: 40px;
+    --spacer: 40px;
+    width: 400px;
+    height: 100%;
+    flex-shrink: 0;
+    padding: 0px 33px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: rgb(109, 109, 109);
+    }
+    
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 5px;
+    }
+    .options {
+      color: var(--white);
+      height: var(--height);
+      width: 160px;
+      border-radius: 8px;
+      margin: var(--spacer) auto;
+      background-color: var(--secondary-bg-color);
+      display: flex;
+      align-items: center;
+      .option {
+        flex: 1;
+        line-height: 40px;
+        height: 100%;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+        border: 0.5px solid var(--white-25);
+        user-select: none;
+        &.active {
+          font-weight: 700;
+          background: var(--brand-gradient);
+          border: 0.5px solid var(--brand-gradient);
+        }
+        &:first-child {
+          border-top-left-radius: inherit;
+          border-bottom-left-radius: inherit;
+        }
+        &:last-child {
+          border-top-right-radius: inherit;
+          border-bottom-right-radius: inherit;
+        }
+      }
+    }
+    .features {
+      width: 100%;
+      padding-bottom: var(--spacer);
+      .colors {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .color {
+        cursor: pointer;
+        height: 73px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(50%, -50%);
+  }
+}

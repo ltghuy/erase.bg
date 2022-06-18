@@ -69,8 +69,6 @@
         color: var(--white-80);
         font-weight: 700;
         font-size: 16px;
-        margin-top: 30px;
-        margin-bottom: 10px;
     }
     &__test {
         margin-top: 30px;
@@ -124,22 +122,61 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 30px;
         }
         .photo {
-            max-width: 525px;
-            &.removed img {
-                background-color: rgb(255, 255, 255);
-                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3LjkzNyA3LjkzOCIgaGVpZ2h0PSIzMCIgd2lkdGg9IjMwIj48cGF0aCBwYWludC1vcmRlcj0ic3Ryb2tlIGZpbGwgbWFya2VycyIgZD0iTS4wMTQuMDE0SDMuOTdWMy45N0guMDE0ek0zLjk3IDMuOTY4aDMuOTU0djMuOTU1SDMuOTd6IiBmaWxsPSIjZWVlZmYwIi8+PC9zdmc+);
-            }
-            h3 {
-                font-weight: 700;
-                color: var(--white);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            .top {
                 padding-bottom: 15px;
+                height: 40px;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 15px;
+                h3 {
+                    font-weight: 700;
+                    color: var(--white);
+                }
+                .edit_btn {
+                    border: 1px solid #49494f;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 700;
+                    width: 84px;
+                    height: 40px;
+                    &:hover {
+                        background-color: #49494f;
+                    }
+                    img {
+                        width: 16px;
+                        height: 16px;
+                        background: none;
+                        margin-right: 5px;
+                    }
+                }
             }
             img {
                 width: 100%;
-                max-height: 400px;
+                max-width: 350px;
                 object-fit: cover;
+            }
+            .image {
+                background-color: var(--bg-color);
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+            &.removed {
+                img {
+                    background-color: rgb(255, 255, 255);
+                    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3LjkzNyA3LjkzOCIgaGVpZ2h0PSIzMCIgd2lkdGg9IjMwIj48cGF0aCBwYWludC1vcmRlcj0ic3Ryb2tlIGZpbGwgbWFya2VycyIgZD0iTS4wMTQuMDE0SDMuOTdWMy45N0guMDE0ek0zLjk3IDMuOTY4aDMuOTU0djMuOTU1SDMuOTd6IiBmaWxsPSIjZWVlZmYwIi8+PC9zdmc+);
+                }
             }
         }
     }

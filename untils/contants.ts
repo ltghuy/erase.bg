@@ -90,3 +90,28 @@ export const previewList = [
     preview: 'https://s.yimg.com/ny/api/res/1.2/3G3VElJuLvYn.Xy.g3Aa1g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQ5MA--/https://s.yimg.com/uu/api/res/1.2/Xp40OW.qtLGP2KyrMR6rjQ--~B/aD02MTM7dz04MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/no/nownews.com/3d1aa28ba709b81972294b31bf66851b'
   },
 ]
+
+export const  colorTemplate = [
+  {color: '#f44336'}, 
+  {color: '#e91e63'},
+  {color: '#9c27b0'},
+  {color: '#673ab7'},
+  {color: '#3f51b5'}, 
+  {color: '#2194f3'},
+  {color: '#03a8f4'},
+  {color: '#00bbd4'},
+  {color: '#009688'}, 
+  {color: '#4caf50'},
+  {color: '#8bc34a'},
+  {color: '#cddc39'},
+  {color: '#ffeb3b'}, 
+  {color: '#ffc107'},
+  {color: '#ff9800'},
+  {color: '#ff5722'},
+  {color: '#795548'},
+  {color: '#9e9e9e'}, 
+  {color: '#a7a8ba'},
+  {color: '#607d8b'},
+  {color: '#000000'},
+  {color: '#ffffff'}
+]

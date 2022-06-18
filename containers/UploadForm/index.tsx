@@ -5,9 +5,11 @@ import Loading from '../../components/Loading'
 
 import axios from 'axios'
 import styles from './upload_form.module.scss'
+import EditForm from '../EditForm'
 
 const UploadForm = () => {
   const [showPreview, setShowPreview] = useState<boolean>(false)
+  const [showEditForm, setShowEditForm] = useState<boolean>(false)
   const [previewUrl, setPreviewUrl] = useState<string>('')
   const [removedUrl, setRemovedUrl] = useState<string>('')
   const [showLoading, setShowLoading] = useState<boolean>(true)
@@ -132,26 +134,43 @@ const UploadForm = () => {
             Supported formats: <span>png</span> <span>jpeg</span> <span>jpg</span> <span>webp</span>
           </p>
         </div>
-        <h3>No Image?</h3>
-        <p>Try one of these</p>
-        <div className={styles.upload__test}>
-          {
-            !showPreview && previewList.map((img) => {
-              return <img src={img.src} key={img.id} onClick={() => handleTryPreview(img)}/>
-            })
-          }
-        </div>
+        {
+          !showPreview && 
+          <>
+            <h3 style={{margin: '40px 0px 20px'}}>No Image?</h3>
+            <p>Try one of these</p>
+            <div className={styles.upload__test}>
+              {
+                previewList.map((img) => {
+                  return <img src={img.src} key={img.id} onClick={() => handleTryPreview(img)}/>
+                })
+              }
+            </div>
+          </>
+        }
         { showPreview && 
           <div className={styles.upload__preview}>
             <div className={styles.content} ref={haveResponeRef}>
               <div className={styles.wrapper}>
                 <div className={styles.photo}>
-                  <h3>Original</h3>
-                  <img src={previewUrl} alt='original photos'/>
+                  <div className={styles.top}>
+                    <h3>Original</h3>
+                  </div>
+                  <div className={styles.image}>
+                    <img src={localStorage.getItem("sourceImg") || previewUrl} alt='original photos'/>
+                  </div>
                 </div>
                 <div className={`${styles.photo} ${styles.removed}`}>
-                  <h3>Background Removed</h3>
-                  <img src='' alt='background removed photos' id='removed_image'/>
+                  <div className={styles.top}>
+                    <h3>Background Removed</h3>
+                    <div className={styles.edit_btn} onClick={() => setShowEditForm(true)}>
+                      <img src="/images/edit.svg" alt="edit icon" />
+                      Edit
+                    </div>
+                  </div>
+                  <div className={styles.image}>
+                    <img src='' alt='background removed photos' id='removed_image'/>
+                  </div>
                 </div>
               </div>
               <div style={{display: 'flex', marginTop: '30px', justifyContent: 'center'}}>
@@ -167,6 +186,13 @@ const UploadForm = () => {
               </div>
             </div>  
             { showLoading && <Loading /> }
+            { showEditForm && 
+              <EditForm 
+                setShowEditForm={setShowEditForm}
+                previewUrl={previewUrl}
+                removedUrl={removedUrl}
+              /> 
+            }
           </div>
         }
     </div>
