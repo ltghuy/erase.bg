@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../../components/Button'
-import { colorTemplate } from '../../untils/contants'
+import { colorTemplate, backgroundTemplate } from '../../untils/contants'
 import styles from './editForm.module.scss'
 
 interface EditFormProps {
@@ -36,6 +36,10 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
 
   const updateBG = (color: string) => {
     setBgColor(color)
+  }
+
+  const updateBackdrops = (background: any) => {
+    console.log(background)
   }
 
   const downLoad = () => {
@@ -109,6 +113,10 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
             {
               bgOptions === 'color' ? 
               <div className={styles.colors}>
+                <div className={styles.colors__picker}>
+                  <img src="/images/color-picker.svg" alt="color picker" />
+                  <input type="color" onChange={(e: any) => setBgColor(e.target.value)} />
+                </div>
                 {
                   colorTemplate.map((background) =>
                     <div 
@@ -124,7 +132,22 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
                 }
               </div>
               :
-              <h1>Image</h1>
+              <div className={styles.backdrops}>
+                {
+                  backgroundTemplate.map((background) => (
+                    <div className={styles.item} key={background.id}>
+                      <img src={background.thumnail} alt="backdrops option" />
+                      <div 
+                        className={styles.title}
+                        onClick={() => updateBackdrops(background)}
+                      >
+                          {background.title}
+                      </div>
+                    </div>
+                    )
+                  )
+                }
+              </div>
             }
           </div>
         </div>

@@ -115,3 +115,56 @@ export const  colorTemplate = [
   {color: '#000000'},
   {color: '#ffffff'}
 ]
+
+export const backgroundTemplate = [
+  {
+    id: 1,
+    title: 'Bokeh',
+    thumnail: '/images/edit_backdrops/thumnails/bokeh.jpeg',
+    childrens: [
+      {id: 1, src: '/images/edit_backdrops/bokeh/1.jpeg'},
+      {id: 2, src: '/images/edit_backdrops/bokeh/2.jpeg'},
+      {id: 3, src: '/images/edit_backdrops/bokeh/3.jpeg'},
+      {id: 4, src: '/images/edit_backdrops/bokeh/4.jpeg'},
+      {id: 5, src: '/images/edit_backdrops/bokeh/5.jpeg'},
+      {id: 6, src: '/images/edit_backdrops/bokeh/6.jpeg'},
+      {id: 7, src: '/images/edit_backdrops/bokeh/7.jpeg'},
+      {id: 8, src: '/images/edit_backdrops/bokeh/8.jpeg'}
+    ]
+  },
+  {
+    id: 2,
+    title: 'Colorful',
+    thumnail: '/images/edit_backdrops/thumnails/colorful.jpeg'
+  },
+  {
+    id: 3,
+    title: 'Cricket',
+    thumnail: '/images/edit_backdrops/thumnails/cricket.png'
+  },
+  {
+    id: 4,
+    title: 'Fabric',
+    thumnail: '/images/edit_backdrops/thumnails/fabric.jpeg'
+  },
+  {
+    id: 5,
+    title: 'Gradients',
+    thumnail: '/images/edit_backdrops/thumnails/gradients.jpeg'
+  },
+  {
+    id: 6,
+    title: 'Titles',
+    thumnail: '/images/edit_backdrops/thumnails/titles.jpeg'
+  },
+  {
+    id: 7,
+    title: 'Walls',
+    thumnail: '/images/edit_backdrops/thumnails/walls.jpeg'
+  },
+  {
+    id: 8,
+    title: 'Wood',
+    thumnail: '/images/edit_backdrops/thumnails/wood.jpeg'
+  }
+]
