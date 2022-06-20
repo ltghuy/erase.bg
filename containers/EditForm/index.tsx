@@ -8,12 +8,18 @@ interface EditFormProps {
   previewUrl: String,
   removedUrl: String
 }
+interface BackdropItem {
+  id: number,
+  src: String
+}
 
 const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, removedUrl }) => {
   const [originalMode, setOriginalMode] = useState<boolean>(false)
   const [transformedMode, setTransformedMode] = useState<boolean>(true)
   const [bgOptions, setBgOptions] = useState<string>('image')
   const [bgColor, setBgColor] = useState<string>('')
+  const [bgImg, setBgImg] = useState<string>('')
+  const [backdropList, setBackdropList] = useState<BackdropItem[]>([])
 
   const closeEditForm = () => {
     if(setShowEditForm) {
@@ -36,10 +42,11 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
 
   const updateBG = (color: string) => {
     setBgColor(color)
+    setBgImg('')
   }
 
-  const updateBackdrops = (background: any) => {
-    console.log(background)
+  const updateBackdrops = (backdrop: BackdropItem[]) => {
+    setBackdropList(backdrop)
   }
 
   const downLoad = () => {
@@ -54,8 +61,21 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
         if (bgColor) {
           ctx.fillStyle = bgColor
           ctx.fillRect(0, 0, canvas.width, canvas.height)
+          ctx.drawImage(image, 0, 0)
         }
-        ctx.drawImage(image, 0, 0)
+
+        if (bgImg) {
+          ctx.drawImage(image, 0, 0)
+          ctx.globalCompositeOperation="destination-over"
+          var background = new Image()
+          background.src = bgImg   
+          ctx.drawImage(background, 0, 0)
+          // Create pattern
+          var ptrn = ctx.createPattern(background, 'no-repeat')
+          ctx.fillStyle = ptrn
+          ctx.fillRect(0, 0, ctx.width, ctx.height)
+        }
+
         const dataURL = canvas.toDataURL()
 
         //DOWNLOAD
@@ -83,8 +103,9 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
           <div className={styles.preview}>
             <img 
               src={'' + toggleImg()} alt="preview images" 
-              style={{backgroundColor: bgColor, backgroundImage: bgColor && 'none'}}
-              className={`${transformedMode && styles.transform}`}
+              style={
+                {backgroundColor: bgColor, backgroundImage: bgImg ? `url(${bgImg}` : 'none'}
+              }
               id='preview_img' />
           </div>
           <div className={styles.download}>
@@ -115,7 +136,10 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
               <div className={styles.colors}>
                 <div className={styles.colors__picker}>
                   <img src="/images/color-picker.svg" alt="color picker" />
-                  <input type="color" onChange={(e: any) => setBgColor(e.target.value)} />
+                  <input 
+                    type="color" 
+                    onChange={(e: any) => {updateBG(e.target.value)}} 
+                  />
                 </div>
                 {
                   colorTemplate.map((background) =>
@@ -139,13 +163,42 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
                       <img src={background.thumnail} alt="backdrops option" />
                       <div 
                         className={styles.title}
-                        onClick={() => updateBackdrops(background)}
+                        onClick={() => updateBackdrops(background.childrens as BackdropItem[])}
                       >
                           {background.title}
                       </div>
                     </div>
                     )
                   )
+                }
+                {
+                  backdropList.length > 0 && 
+                  <>
+                    <button className={styles.back} onClick={() => setBackdropList([])}>
+                      Back
+                    </button>
+                    <div className={styles.backdrops__list}>
+                      {
+                        backdropList.map((backdrop) => (
+                          <div
+                            className={styles.backdrops__item}
+                            key={backdrop.id}
+                            onClick={() => {
+                              setBgImg('' + backdrop.src)
+                              setBgColor('')
+                            }}
+                          >
+                            <img
+                              src={'' + removedUrl}
+                              style={{ backgroundImage: `url(${backdrop.src})` }}
+                              alt="backdrops option"
+                              />
+                          </div>
+                          )
+                        )
+                      }
+                    </div>
+                  </>
                 }
               </div>
             }

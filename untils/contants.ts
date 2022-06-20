@@ -135,36 +135,43 @@ export const backgroundTemplate = [
   {
     id: 2,
     title: 'Colorful',
-    thumnail: '/images/edit_backdrops/thumnails/colorful.jpeg'
+    thumnail: '/images/edit_backdrops/thumnails/colorful.jpeg',
+    childrens: []
   },
   {
     id: 3,
     title: 'Cricket',
-    thumnail: '/images/edit_backdrops/thumnails/cricket.png'
+    thumnail: '/images/edit_backdrops/thumnails/cricket.png',
+    childrens: []
   },
   {
     id: 4,
     title: 'Fabric',
-    thumnail: '/images/edit_backdrops/thumnails/fabric.jpeg'
+    thumnail: '/images/edit_backdrops/thumnails/fabric.jpeg',
+    childrens: []
   },
   {
     id: 5,
     title: 'Gradients',
-    thumnail: '/images/edit_backdrops/thumnails/gradients.jpeg'
+    thumnail: '/images/edit_backdrops/thumnails/gradients.jpeg',
+    childrens: []
   },
   {
     id: 6,
     title: 'Titles',
-    thumnail: '/images/edit_backdrops/thumnails/titles.jpeg'
+    thumnail: '/images/edit_backdrops/thumnails/titles.jpeg',
+    childrens: []
   },
   {
     id: 7,
     title: 'Walls',
-    thumnail: '/images/edit_backdrops/thumnails/walls.jpeg'
+    thumnail: '/images/edit_backdrops/thumnails/walls.jpeg',
+    childrens: []
   },
   {
     id: 8,
     title: 'Wood',
-    thumnail: '/images/edit_backdrops/thumnails/wood.jpeg'
+    thumnail: '/images/edit_backdrops/thumnails/wood.jpeg',
+    childrens: []
   }
 ]
