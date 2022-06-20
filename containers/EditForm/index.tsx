@@ -65,15 +65,11 @@ const EditForm: React.FC<EditFormProps> = ({ setShowEditForm, previewUrl, remove
         }
 
         if (bgImg) {
-          ctx.drawImage(image, 0, 0)
-          ctx.globalCompositeOperation="destination-over"
-          var background = new Image()
+          const background = document.createElement('img') as any
           background.src = bgImg   
-          ctx.drawImage(background, 0, 0)
-          // Create pattern
-          var ptrn = ctx.createPattern(background, 'no-repeat')
-          ctx.fillStyle = ptrn
-          ctx.fillRect(0, 0, ctx.width, ctx.height)
+          background.setAttribute("style", "width: 100%; height: 100%; object-fit: cover;")
+          ctx.drawImage(background, 0, 0, canvas.width, canvas.height)
+          ctx.drawImage(image, 0, 0)
         }
 
         const dataURL = canvas.toDataURL()
