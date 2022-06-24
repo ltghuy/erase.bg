@@ -136,42 +136,95 @@ export const backgroundTemplate = [
     id: 2,
     title: 'Colorful',
     thumnail: '/images/edit_backdrops/thumnails/colorful.jpeg',
-    childrens: []
+    childrens: [
+      {id: 1, src: '/images/edit_backdrops/colorful/1.jpeg'},
+      {id: 2, src: '/images/edit_backdrops/colorful/2.jpeg'},
+      {id: 3, src: '/images/edit_backdrops/colorful/3.jpeg'},
+      {id: 4, src: '/images/edit_backdrops/colorful/4.jpeg'},
+      {id: 5, src: '/images/edit_backdrops/colorful/5.jpeg'},
+      {id: 6, src: '/images/edit_backdrops/colorful/6.jpeg'}
+    ]
   },
   {
     id: 3,
     title: 'Cricket',
     thumnail: '/images/edit_backdrops/thumnails/cricket.png',
-    childrens: []
+    childrens: [
+      {id: 1, src: '/images/edit_backdrops/cricket/1.png'},
+      {id: 2, src: '/images/edit_backdrops/cricket/2.png'},
+      {id: 3, src: '/images/edit_backdrops/cricket/3.png'},
+      {id: 4, src: '/images/edit_backdrops/cricket/4.png'},
+      {id: 5, src: '/images/edit_backdrops/cricket/5.png'},
+      {id: 6, src: '/images/edit_backdrops/cricket/6.png'},
+      {id: 7, src: '/images/edit_backdrops/cricket/7.png'}
+    ]
   },
   {
     id: 4,
     title: 'Fabric',
     thumnail: '/images/edit_backdrops/thumnails/fabric.jpeg',
-    childrens: []
+    childrens: [
+      {id: 1, src: '/images/edit_backdrops/fabric/1.jpeg'},
+      {id: 2, src: '/images/edit_backdrops/fabric/2.jpeg'},
+      {id: 3, src: '/images/edit_backdrops/fabric/3.jpeg'},
+      {id: 4, src: '/images/edit_backdrops/fabric/4.jpeg'},
+      {id: 5, src: '/images/edit_backdrops/fabric/5.jpeg'},
+      {id: 6, src: '/images/edit_backdrops/fabric/6.jpeg'}
+    ]
   },
   {
     id: 5,
     title: 'Gradients',
     thumnail: '/images/edit_backdrops/thumnails/gradients.jpeg',
-    childrens: []
+    childrens: [
+      {id: 1, src: '/images/edit_backdrops/gradients/1.jpeg'},
+      {id: 2, src: '/images/edit_backdrops/gradients/2.jpeg'},
+      {id: 3, src: '/images/edit_backdrops/gradients/3.jpeg'},
+      {id: 4, src: '/images/edit_backdrops/gradients/4.jpeg'},
+      {id: 5, src: '/images/edit_backdrops/gradients/5.jpeg'},
+      {id: 6, src: '/images/edit_backdrops/gradients/6.jpeg'},
+      {id: 7, src: '/images/edit_backdrops/gradients/7.jpeg'}
+    ]
   },
   {
     id: 6,
     title: 'Titles',
     thumnail: '/images/edit_backdrops/thumnails/titles.jpeg',
-    childrens: []
+    childrens: [
+      {id: 1, src: '/images/edit_backdrops/title/1.jpeg'},
+      {id: 2, src: '/images/edit_backdrops/title/2.jpeg'},
+      {id: 3, src: '/images/edit_backdrops/title/3.jpeg'},
+      {id: 4, src: '/images/edit_backdrops/title/4.jpeg'},
+      {id: 5, src: '/images/edit_backdrops/title/5.jpeg'},
+      {id: 6, src: '/images/edit_backdrops/title/6.jpeg'}
+    ]
   },
   {
     id: 7,
     title: 'Walls',
     thumnail: '/images/edit_backdrops/thumnails/walls.jpeg',
-    childrens: []
+    childrens: [
+      {id: 1, src: '/images/edit_backdrops/walls/1.jpeg'},
+      {id: 2, src: '/images/edit_backdrops/walls/2.jpeg'},
+      {id: 3, src: '/images/edit_backdrops/walls/3.jpeg'},
+      {id: 4, src: '/images/edit_backdrops/walls/4.jpeg'},
+      {id: 5, src: '/images/edit_backdrops/walls/5.jpeg'},
+      {id: 6, src: '/images/edit_backdrops/walls/6.jpeg'},
+      {id: 7, src: '/images/edit_backdrops/walls/7.jpeg'}
+    ]
   },
   {
     id: 8,
     title: 'Wood',
     thumnail: '/images/edit_backdrops/thumnails/wood.jpeg',
-    childrens: []
+    childrens: [
+      {id: 1, src: '/images/edit_backdrops/woods/1.jpeg'},
+      {id: 2, src: '/images/edit_backdrops/woods/2.jpeg'},
+      {id: 3, src: '/images/edit_backdrops/woods/3.jpeg'},
+      {id: 4, src: '/images/edit_backdrops/woods/4.jpeg'},
+      {id: 5, src: '/images/edit_backdrops/woods/5.jpeg'},
+      {id: 6, src: '/images/edit_backdrops/woods/6.jpeg'},
+      {id: 7, src: '/images/edit_backdrops/woods/7.jpeg'}
+    ]
   }
 ]
