@@ -16,9 +16,11 @@ yarn dev
 
 ``` Change the background with another image ```
 
-![112848464_958671264644408_6232593243018590684_n](https://user-images.githubusercontent.com/72726598/174645932-0a8bb9f4-3c19-49ec-898c-60adc811f9d6.jpg)
+![image](https://user-images.githubusercontent.com/72726598/180632345-838236ed-f814-405d-bf06-feb2f06b3d2d.png)
 
-![change_bg](https://user-images.githubusercontent.com/72726598/174645961-714e2569-5fcf-43cf-9611-5cf1a4b6c626.png)
+![image](https://user-images.githubusercontent.com/72726598/180632352-cc8b481e-29f5-43f4-ab38-ca99103fc616.png)
+
+
 
 
 
