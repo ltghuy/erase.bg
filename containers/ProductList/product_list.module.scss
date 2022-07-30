@@ -1,27 +1,50 @@
+@use '../../styles/breakpoint.module.scss' as *;
+
 .product_list {
-    padding-bottom: 152px;
-    position: relative;
+  padding-bottom: 152px;
+  position: relative;
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: -20%;
+    pointer-events: none;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 58px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 49px;
+    padding-top: 128px;
+    padding-bottom: 84px;
+  }
+
+  @media screen and (max-width: $mobileMaxWidth) {
+    padding-bottom: 40px;
+
     .bg {
-        position: absolute;
-        top: 0;
-        left: -20%;
-        pointer-events: none;
+      display: none;
     }
+
     .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 58px;
+      flex-direction: column;
     }
+
     .title {
-        text-align: center;
-        font-size: 34px;
-        font-weight: 700;
-        line-height: 49px;
-        padding-top: 128px;
-        padding-bottom: 84px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      font-size: 24px;
     }
+  }
 }

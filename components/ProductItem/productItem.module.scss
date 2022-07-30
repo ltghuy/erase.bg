@@ -1,62 +1,78 @@
+@use '../../styles/breakpoint.module.scss' as *;
+
 .item {
-    --padding: 30px;
-    background-color: var(--black-70);
-    height: 316px;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: var(--padding);
-    position: relative;
+  --padding: 30px;
+  background-color: var(--black-70);
+  height: 316px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding);
+  position: relative;
 
-    &:hover {
-        &::after {
-            opacity: 1;
-        }
-    }
+  @media screen and (max-width: $mobileMaxWidth) {
+    height: 240px;
+  }
 
-    &:global(.green) {
-        &::after {
-            background: var(--gradient-green) border-box;
-        }
-    }
-    &:global(.yellow) {
-        &::after {
-            background: var(--gradient-yellow) border-box;
-        }
-    }
-    &:global(.purple) {
-        &::after {
-            background: var(--gradient-purple) border-box;
-        }
-    }
-
+  &:hover {
     &::after {
-        content: "";
-        position: absolute;
-        inset: 0px;
-        border-radius: inherit;
-        border: 3px solid transparent;
-        -webkit-mask: linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box content-box, linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px);
-        -webkit-mask-composite: destination-out;
-        transition: 0.5s;
-        opacity: 0;
+      opacity: 1;
     }
+  }
 
-    img {
-        height: 32px;
-        flex-shrink: 0;
+  &:global(.green) {
+    &::after {
+      background: var(--gradient-green) border-box;
     }
-    p {
-        font-size: 18px;
-        line-height: 28px;
-        margin-bottom: 30px;
-        color: var(--white-80);
+  }
+
+  &:global(.yellow) {
+    &::after {
+      background: var(--gradient-yellow) border-box;
     }
-    &__button {
-        position: absolute;
-        margin-top: auto;
-        z-index: 2;
-        bottom: var(--padding);
+  }
+
+  &:global(.purple) {
+    &::after {
+      background: var(--gradient-purple) border-box;
     }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    border: 3px solid transparent;
+    -webkit-mask: linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box content-box, linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px);
+    -webkit-mask-composite: destination-out;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  img {
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 30px;
+    color: var(--white-80);
+
+    @media screen and (max-width: $mobileMaxWidth) {
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    margin-top: auto;
+    z-index: 2;
+    bottom: var(--padding);
+  }
 }
