@@ -1,30 +1,53 @@
+@use '../../styles/breakpoint.module.scss' as *;
+
 .item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 64px;
+
+  &__content {
+    max-width: 498px;
+    flex-shrink: 0;
+  }
+
+  &__image {
+    flex: 1;
+    max-width: 380px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    padding-bottom: 24px;
+  }
+
+  &__para {
+    color: var(--white-80);
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+    padding-top: 140px;
+    padding-bottom: 120px;
+  }
+
+  @media screen and (max-width: $mobileMaxWidth) {
+    flex-direction: column;
+    padding: 0;
+
+    &.reverse {
+      flex-direction: column-reverse;
+      padding-top: 60px;
+      padding-bottom: 30px;
+    }
 
     &__content {
-        max-width: 498px;
-        flex-shrink: 0;
+      margin: 20px 0;
     }
-    &__image {
-        flex: 1;
-        max-width: 380px;
-    }
-    &__title {
-        font-size: 24px;
-        line-height: 36px;
-        font-weight: 700;
-        padding-bottom: 24px;
-    }
-    &__para {
-        color: var(--white-80);
-        letter-spacing: 0.5px;
-        font-size: 18px;
-        line-height: 28px;       
-    }
-    &.reverse {
-        flex-direction: row-reverse;
-    }
+  }
 }
