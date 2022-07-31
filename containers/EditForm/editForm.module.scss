@@ -2,8 +2,8 @@
 
 .edit {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   top: 0;
   left: 0;
   background-color: var(--bg-color);
@@ -311,13 +311,9 @@
       padding: 0;
 
       .preview {
-        flex: 1;
-        height: auto;
+        flex: 0;
+        height: 250px;
         margin-bottom: 16px;
-
-        img {
-          width: 100%;
-        }
       }
 
       .tabs {
@@ -326,7 +322,8 @@
 
       .download {
         height: 40px;
-        flex: 0;
+        flex: 1;
+        margin-bottom: 20px;
       }
     }
 
@@ -335,7 +332,11 @@
       display: flex;
       flex-direction: column-reverse;
       width: 100%;
-      margin-top: 100px;
+      margin-top: 20px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .features {
         padding-bottom: 20px;
