@@ -192,6 +192,12 @@
 
       &__apps {
         display: flex;
+
+        .icon {
+          width: 150px;
+          height: 50px;
+          margin: 0 10px;
+        }
       }
     }
 

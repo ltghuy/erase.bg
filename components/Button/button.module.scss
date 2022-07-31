@@ -1,38 +1,50 @@
+@use '../../styles/breakpoint.module.scss' as *;
+
 .button {
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--brand-gradient);
+  color: var(--white);
+  width: 134px;
+  height: 40px;
+  position: relative;
+  transition: 0.5s;
+
+  .input_file {
     cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--brand-gradient);
-    color: var(--white);
-    width: 134px;
-    height: 40px;
-    position: relative;
-    transition: 0.5s;
-    .input_file {
-        cursor: pointer;
-        opacity: 0;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        font-size: 0px;
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 0px;
+  }
+
+  &:hover {
+    background: var(--brand-gradient-reverse);
+  }
+
+  &__size-large {
+    width: 190px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  &__size-medium {
+    width: 190px;
+    height: 60px;
+    font-size: 16px;
+
+    @media screen and (max-width: $mobileMaxWidth) {
+      height: 40px;
+      width: 160px;
+      font-size: 14px;
     }
-    &:hover {
-        background: var(--brand-gradient-reverse);
-    }
-    &:global(.large) {
-        width: 190px;
-        height: 60px;
-        font-size: 16px;
-    }
-    &:global(.medium) {
-        width: 167px;
-        height: 55px;
-        font-size: 16px;
-    }
+  }
 }

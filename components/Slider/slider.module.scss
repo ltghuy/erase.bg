@@ -70,5 +70,16 @@
   @media screen and (max-width: $mobileMaxWidth) {
     height: auto;
     margin: 40px 20px 0px;
+
+    .line {
+      .icon {
+        height: 25px;
+        width: 25px;
+
+        i {
+          font-size: 12px;
+        }
+      }
+    }
   }
 }

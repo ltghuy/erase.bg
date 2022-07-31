@@ -1,3 +1,5 @@
+@use '../../styles/breakpoint.module.scss' as *;
+
 .edit {
   position: fixed;
   width: 100%;
@@ -9,6 +11,7 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
+
   .wrapper {
     width: 1200px;
     height: 600px;
@@ -17,6 +20,7 @@
     justify-content: space-between;
     background-color: var(--black-70);
   }
+
   .image {
     flex: 1;
     height: 100%;
@@ -24,21 +28,25 @@
     padding: 20px 20px 0px;
     display: flex;
     flex-direction: column;
+
     .tabs {
       width: 100%;
       height: 24px;
       margin-bottom: 32px;
       display: flex;
       flex-shrink: 0;
+
       .tab {
         cursor: pointer;
         font-size: 14px;
         color: var(--white-80);
         margin-right: 30px;
+
         &.active {
           font-weight: 700;
           color: var(--white);
           position: relative;
+
           &::after {
             content: '';
             position: absolute;
@@ -51,6 +59,7 @@
         }
       }
     }
+
     .preview {
       width: 100%;
       height: 425px;
@@ -58,6 +67,7 @@
       display: flex;
       justify-content: center;
       flex-shrink: 0;
+
       img {
         height: 100%;
         max-height: 100%;
@@ -65,6 +75,7 @@
         background-size: cover;
       }
     }
+
     .download {
       flex: 1;
       display: flex;
@@ -72,6 +83,7 @@
       align-items: center;
     }
   }
+
   .backgrounds {
     --height: 40px;
     --spacer: 40px;
@@ -85,16 +97,17 @@
       width: 5px;
       height: 5px;
     }
-    
+
     &::-webkit-scrollbar-thumb {
       border-radius: 5px;
       background: rgb(109, 109, 109);
     }
-    
+
     &::-webkit-scrollbar-track {
       background-color: transparent;
       border-radius: 5px;
     }
+
     .options {
       color: var(--white);
       height: var(--height);
@@ -104,6 +117,7 @@
       background-color: var(--secondary-bg-color);
       display: flex;
       align-items: center;
+
       .option {
         flex: 1;
         line-height: 40px;
@@ -113,24 +127,29 @@
         cursor: pointer;
         border: 0.5px solid var(--white-25);
         user-select: none;
+
         &.active {
           font-weight: 700;
           background: var(--brand-gradient);
           border: 0.5px solid var(--brand-gradient);
         }
+
         &:first-child {
           border-top-left-radius: inherit;
           border-bottom-left-radius: inherit;
         }
+
         &:last-child {
           border-top-right-radius: inherit;
           border-bottom-right-radius: inherit;
         }
       }
     }
+
     .features {
       width: 100%;
       padding-bottom: var(--spacer);
+
       .colors {
         display: flex;
         justify-content: center;
@@ -138,16 +157,19 @@
         position: relative;
         flex-wrap: wrap;
         gap: 16px;
+
         &__picker {
           display: flex;
           justify-content: center;
           align-items: center;
           position: relative;
           width: 73px;
+
           img {
             width: 40px;
             height: 40px;
           }
+
           input {
             cursor: pointer;
             position: absolute;
@@ -157,22 +179,26 @@
           }
         }
       }
+
       .color {
         cursor: pointer;
         height: 73px;
         width: 73px;
+
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
+
       .backdrops {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         gap: 19px;
         position: relative;
+
         .back {
           position: absolute;
           bottom: 0;
@@ -188,10 +214,12 @@
           margin-left: 50%;
           transform: translateX(-50%);
           cursor: pointer;
+
           &:hover {
             background-color: var(--primary);
           }
         }
+
         &__list {
           background-color: var(--black-70);
           position: absolute;
@@ -205,10 +233,12 @@
           justify-content: center;
           gap: 17px;
         }
+
         &__item {
           cursor: pointer;
           width: 70px;
           height: 70px;
+
           img {
             width: 100%;
             height: 100%;
@@ -216,10 +246,12 @@
             background-size: cover;
           }
         }
+
         .item {
           width: 96px;
           height: 96px;
           position: relative;
+
           img {
             position: absolute;
             width: 100%;
@@ -227,6 +259,7 @@
             object-fit: cover;
             filter: brightness(0.5);
           }
+
           .title {
             cursor: pointer;
             position: absolute;
@@ -241,6 +274,7 @@
       }
     }
   }
+
   .close {
     position: absolute;
     top: 0;
@@ -255,5 +289,95 @@
     justify-content: center;
     align-items: center;
     transform: translate(50%, -50%);
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  @media screen and (max-width: $mobileMaxWidth) {
+    padding: 20px;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+    }
+
+    .image {
+      height: 400px;
+      flex: 0;
+      padding: 0;
+
+      .preview {
+        flex: 1;
+        height: auto;
+        margin-bottom: 16px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .tabs {
+        margin-bottom: 16px;
+      }
+
+      .download {
+        height: 40px;
+        flex: 0;
+      }
+    }
+
+    .backgrounds {
+      flex: 1;
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      margin-top: 100px;
+
+      .features {
+        padding-bottom: 20px;
+
+        .backdrops {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+
+          .item {
+            width: unset;
+          }
+
+          &__item {
+            width: 96px;
+            height: 96px;
+          }
+
+          .back {
+            position: relative;
+            margin: 0 auto;
+            margin-top: 20px;
+            transform: translateX(100%);
+          }
+        }
+      }
+
+      .options {
+        width: 80%;
+        margin: 20px auto;
+      }
+    }
+
+    .close {
+      top: 12px;
+      right: 12px;
+      width: 24px;
+      height: 24px;
+
+      svg {
+        width: 6px;
+        height: 6px;
+      }
+    }
   }
 }
