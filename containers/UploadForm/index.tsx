@@ -29,7 +29,7 @@ const UploadForm = () => {
       data: body,
       headers: {
         "Content-Type": "multipart/form-data",
-        Authorization: "Token 776d23767218a2e9c9067d89ec4dcfa131dc3d03",
+        Authorization: `${process.env.KEY}`,
       },
     })
       .then(function (response) {
@@ -85,7 +85,7 @@ const UploadForm = () => {
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
-        Authorization: "Token 776d23767218a2e9c9067d89ec4dcfa131dc3d03",
+        Authorization: `${process.env.KEY}`,
       },
     })
       .then(function (response) {
