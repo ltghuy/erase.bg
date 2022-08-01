@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
-import styles from "./hero.module.scss";
 import Button from "../Button";
+import styles from "./hero.module.scss";
 
 const Hero = () => {
   const vidRef = useRef<any>();

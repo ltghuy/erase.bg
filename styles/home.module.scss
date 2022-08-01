@@ -173,7 +173,16 @@
     }
   }
 
-  @media screen and (max-width: $mobileMaxWidth) {
+  @media screen and (max-width: $tabletMaxWidth) {
+    .grid {
+      &__layout {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  @media 
+  screen and (max-width: $mobileMaxWidth) {
     .intro {
       padding: 20px;
       height: auto;

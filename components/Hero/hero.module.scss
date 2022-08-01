@@ -81,7 +81,7 @@
     }
   }
 
-  @media screen and (max-width: $mobileMaxWidth) {
+  @media screen and (max-width: $tabletMaxWidth) {
     height: auto;
 
     .container {
@@ -90,6 +90,7 @@
 
       .hero__animation {
         width: 100%;
+        max-width: 500px;
 
         video {
           width: 100%;
