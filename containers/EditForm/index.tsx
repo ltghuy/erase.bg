@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../components/Button";
 import { colorTemplate, backgroundTemplate } from "../../untils/contants";
+import UploadIcon from '../../public/images/upload-image.svg';
 import styles from "./editForm.module.scss";
 
 interface EditFormProps {
@@ -91,6 +92,17 @@ const EditForm: React.FC<EditFormProps> = ({
     else image.onload = toDataURL;
   };
 
+  const handleFileOpen = () => {
+    const input = document.createElement('input') as HTMLInputElement;
+    input.type = 'file';
+    input.onchange = function (e: any) {
+      const url = URL.createObjectURL(e.target.files[0]);
+      setBgImg("" + url);
+      setBgColor("");
+    }
+    input.click();
+  }
+
   return (
     <div className={styles.edit}>
       <div className={styles.wrapper}>
@@ -130,17 +142,15 @@ const EditForm: React.FC<EditFormProps> = ({
         <div className={styles.backgrounds}>
           <div className={styles.options}>
             <div
-              className={`${styles.option} ${
-                bgOptions === "image" && styles.active
-              }`}
+              className={`${styles.option} ${bgOptions === "image" && styles.active
+                }`}
               onClick={() => setBgOptions("image")}
             >
               Image
             </div>
             <div
-              className={`${styles.option} ${
-                bgOptions === "color" && styles.active
-              }`}
+              className={`${styles.option} ${bgOptions === "color" && styles.active
+                }`}
               onClick={() => setBgOptions("color")}
             >
               Color
@@ -174,6 +184,9 @@ const EditForm: React.FC<EditFormProps> = ({
               </div>
             ) : (
               <div className={styles.backdrops}>
+                <div className={styles.upload_image} onClick={handleFileOpen}>
+                  <UploadIcon />
+                </div>
                 {backgroundTemplate.map((background) => (
                   <div className={styles.item} key={background.id}>
                     <img src={background.thumnail} alt="backdrops option" />

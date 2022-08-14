@@ -199,6 +199,21 @@
         gap: 19px;
         position: relative;
 
+        .upload_image {
+          cursor: pointer;
+          width: 96px;
+          height: 96px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            width: 40%;
+            fill: var(--white);
+          }
+        }
+
         .back {
           position: absolute;
           bottom: 0;
@@ -345,7 +360,8 @@
           display: grid;
           grid-template-columns: repeat(2, 1fr);
 
-          .item {
+          .item,
+          .upload_image {
             width: unset;
           }
 
