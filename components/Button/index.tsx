@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "next/router";
 import styles from "./button.module.scss";
 
 interface ButtonProp {
@@ -16,12 +15,6 @@ const Button: React.FC<ButtonProp> = ({
   handClick,
   downLoad = false,
 }) => {
-  const router = useRouter();
-
-  const handleClick = () => {
-    handClick || router.push("/upload");
-  };
-
   return (
     <>
       {downLoad ? (
@@ -34,7 +27,7 @@ const Button: React.FC<ButtonProp> = ({
       ) : (
         <button
           className={`${styles.button} ${styles[`button__size-${size}`]}`}
-          onClick={handleClick}
+          onClick={handClick}
         >
           <input
             type="file"

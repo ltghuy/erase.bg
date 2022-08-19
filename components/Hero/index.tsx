@@ -1,10 +1,13 @@
 import React, { useRef, useEffect } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Button from "../Button";
 import styles from "./hero.module.scss";
 
 const Hero = () => {
   const vidRef = useRef<any>();
+  const router = useRouter();
+  
   useEffect(() => {
     vidRef.current.play();
   }, []);
@@ -30,7 +33,7 @@ const Hero = () => {
             </a>
           </Link>
           <div className={styles.hero__upload}>
-            <Button size="large">
+            <Button size="large" downLoad handClick={() => {router.push("/upload")}}>
               <img
                 src="/images/upload.svg"
                 alt="icon"

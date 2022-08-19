@@ -1,9 +1,11 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Button from "../Button";
 import styles from "./header.module.scss";
 
 const Header = () => {
+  const router = useRouter()
   return (
     <>
       <div className={styles.header}>
@@ -34,7 +36,7 @@ const Header = () => {
             <a className={styles.header__link}>Blog</a>
           </Link>
           <div className={styles.header__btn}>
-            <Button>Upload Image</Button>
+            <Button downLoad handClick={() => {router.push("/upload")}}>Upload Image</Button>
           </div>
         </div>
       </div>

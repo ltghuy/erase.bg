@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../components/Button";
 import { colorTemplate, backgroundTemplate } from "../../untils/contants";
+import { getDate } from "../../untils/date";
 import UploadIcon from '../../public/images/upload-image.svg';
 import styles from "./editForm.module.scss";
 
@@ -84,7 +85,7 @@ const EditForm: React.FC<EditFormProps> = ({
 
       //DOWNLOAD
       const link = document.createElement("a");
-      link.download = "change_bg.png";
+      link.download = `${getDate()}.png`;
       link.href = dataURL;
       link.click();
     };

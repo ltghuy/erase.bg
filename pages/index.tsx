@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Button from "../components/Button";
 import FeatureItem from "../components/FeatureItem";
 import GridItem from "../components/GridItem";
@@ -15,6 +16,8 @@ import { gridItem, questionItem } from "../untils/contants";
 import styles from "../styles/home.module.scss";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
   return (
     <div className={styles.home}>
       <Head>
@@ -75,7 +78,7 @@ const Home: NextPage = () => {
               creativity. Get the right image format for government documents
               and passport
               <div style={{ marginTop: "28px" }}>
-                <Button size="medium">Upload Image</Button>
+                <Button size="medium" downLoad handClick={() => {router.push("/upload")}}>Upload Image</Button>
               </div>
             </FeatureItem>
             <FeatureItem
@@ -86,7 +89,7 @@ const Home: NextPage = () => {
               Quickly remove background from logos and signatures for your
               online documents
               <div style={{ marginTop: "28px" }}>
-                <Button size="medium">Upload Image</Button>
+                <Button size="medium" downLoad handClick={() => {router.push("/upload")}}>Upload Image</Button>
               </div>
             </FeatureItem>
           </div>
@@ -109,7 +112,7 @@ const Home: NextPage = () => {
             })}
           </div>
           <div className={styles.grid__button}>
-            <Button size="medium">Know more</Button>
+            <Button size="medium" downLoad>Know more</Button>
           </div>
         </section>
         <section className={styles.products}>

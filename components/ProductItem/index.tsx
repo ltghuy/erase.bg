@@ -20,7 +20,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
       </p>
       <p>{text}</p>
       <div className={styles.item__button}>
-        <Button>Try now for free</Button>
+        <Button downLoad>Try now for free</Button>
       </div>
     </div>
   );
