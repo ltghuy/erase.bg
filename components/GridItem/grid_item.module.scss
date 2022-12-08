@@ -1,4 +1,4 @@
-.grid__item {
+.wrapper {
     background-color: var(--secondary-bg-color);
     cursor: pointer;
     height: 238px;
@@ -41,5 +41,4 @@
         -webkit-mask-composite: destination-out;
         opacity: 0;
     }
-    
 }

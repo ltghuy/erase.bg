@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Button from "../../components/Button";
 import { colorTemplate, backgroundTemplate } from "../../untils/contants";
 import { getDate } from "../../untils/date";
+import Button from "../../components/Button";
 import UploadIcon from '../../public/images/upload-image.svg';
 import styles from "./editForm.module.scss";
 
 interface EditFormProps {
-  setShowEditForm?: Function;
+  setShowEditForm?: (show: boolean) => void;
   previewUrl: String;
   removedUrl: String;
 }
@@ -22,7 +22,7 @@ const EditForm: React.FC<EditFormProps> = ({
 }) => {
   const [originalMode, setOriginalMode] = useState<boolean>(false);
   const [transformedMode, setTransformedMode] = useState<boolean>(true);
-  const [bgOptions, setBgOptions] = useState<string>("image");
+  const [bgOptions, setBgOptions] = useState<"color" | "image">("image");
   const [bgColor, setBgColor] = useState<string>("");
   const [bgImg, setBgImg] = useState<string>("");
   const [backdropList, setBackdropList] = useState<BackdropItem[]>([]);
@@ -46,7 +46,7 @@ const EditForm: React.FC<EditFormProps> = ({
     }
   };
 
-  const updateBG = (color: string) => {
+  const updateBgColor = (color: string) => {
     setBgColor(color);
     setBgImg("");
   };
@@ -165,7 +165,7 @@ const EditForm: React.FC<EditFormProps> = ({
                   <input
                     type="color"
                     onChange={(e: any) => {
-                      updateBG(e.target.value);
+                      updateBgColor(e.target.value);
                     }}
                   />
                 </div>
@@ -173,7 +173,7 @@ const EditForm: React.FC<EditFormProps> = ({
                   <div
                     className={styles.color}
                     key={background.color}
-                    onClick={() => updateBG(background.color)}
+                    onClick={() => updateBgColor(background.color)}
                   >
                     <img
                       src={"" + removedUrl}
@@ -183,7 +183,8 @@ const EditForm: React.FC<EditFormProps> = ({
                   </div>
                 ))}
               </div>
-            ) : (
+            ) : 
+            (
               <div className={styles.backdrops}>
                 <div className={styles.upload_image} onClick={handleFileOpen}>
                   <UploadIcon />

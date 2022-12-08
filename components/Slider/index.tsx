@@ -16,6 +16,7 @@ const Slider = () => {
       removeRef.current.style.width = `${ralativePos}px`;
     }
   };
+  
   return (
     <>
       <Head>

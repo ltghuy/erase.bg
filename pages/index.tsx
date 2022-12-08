@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Fragment } from "react";
+import { gridItem, questionItem } from "../untils/contants";
 import Button from "../components/Button";
 import FeatureItem from "../components/FeatureItem";
 import GridItem from "../components/GridItem";
@@ -11,8 +13,6 @@ import Slider from "../components/Slider";
 import QuestionItem from "../components/QuestionItem";
 import ProductList from "../containers/ProductList";
 import Footer from "../components/Footer";
-import { Fragment } from "react";
-import { gridItem, questionItem } from "../untils/contants";
 import styles from "../styles/home.module.scss";
 
 const Home: NextPage = () => {

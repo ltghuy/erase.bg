@@ -1,11 +1,10 @@
 import React, { useState, useRef } from "react";
-import Button from "../../components/Button";
-import { previewList } from "../../untils/contants";
-import Loading from "../../components/Loading";
-
 import axios from "axios";
-import styles from "./upload_form.module.scss";
+import { previewList } from "../../untils/contants";
+import Button from "../../components/Button";
+import Loading from "../../components/Loading";
 import EditForm from "../EditForm";
+import styles from "./upload_form.module.scss";
 
 const UploadForm = () => {
   const [showPreview, setShowPreview] = useState<boolean>(false);
@@ -15,7 +14,7 @@ const UploadForm = () => {
   const [showLoading, setShowLoading] = useState<boolean>(true);
   const haveResponeRef = useRef<any>(null);
 
-  const handleTryPreview = (img: any) => {
+  const tryRemoveImage = (img: any) => {
     setPreviewUrl(img.preview);
     setShowPreview(true);
     setShowLoading(true);
@@ -155,7 +154,7 @@ const UploadForm = () => {
                 <img
                   src={img.src}
                   key={img.id}
-                  onClick={() => handleTryPreview(img)}
+                  onClick={() => tryRemoveImage(img)}
                 />
               );
             })}

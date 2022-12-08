@@ -1,11 +1,11 @@
-import React, { Children, Component } from "react";
+import React from "react";
 import styles from "./features_item.module.scss";
 
 interface FeatureItemProps {
   reverse?: boolean;
   imagesUrl?: string;
   title: string;
-  children: any;
+  children: React.ReactNode;
 }
 
 const FeatureItem: React.FC<FeatureItemProps> = ({

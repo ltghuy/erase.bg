@@ -5,7 +5,7 @@ interface GridItemProps {
 }
 const GridItem: React.FC<GridItemProps> = ({item}) => {
   return (
-    <div className={styles.grid__item}>
+    <div className={styles.wrapper}>
         <img src={item.logo} alt="grid icon" />
         <div className={styles.content}>
             <h4>{item.title}</h4>
